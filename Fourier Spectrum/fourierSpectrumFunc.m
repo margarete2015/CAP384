@@ -24,7 +24,8 @@ function [freq, energy] = fourierSpectrum (f, t)
 	'power spectrum visualization'
 	fImg = imag(f);
 	checkImg = find(abs(fImg) < eps);
-
+	
+	'if function is complex'
 	if(!(length(checkImg) != 0))
 	  subplot(2, 1, 2)
 	  plot(freq, energia) 
@@ -32,6 +33,7 @@ function [freq, energy] = fourierSpectrum (f, t)
 	  xlabel ("Frequency");
 	  ylabel ("Energy");
 	else
+	'if function is real'
 	subplot(2, 1, 2)
 	  plot(freq(N/2+1:N), energia(N/2+1:N)) 
 	  title ("Fourier Power Spectrum");
